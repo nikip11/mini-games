@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    tty: true
+    container_name: app
+    volumes:
+      - ./app:/app
+    environment:
+      - PORT=3001
+    ports:
+      - 3001:3001
