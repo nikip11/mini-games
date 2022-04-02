@@ -9,7 +9,7 @@ interface GetProps extends UseProps {
 }
 
 export function useGetWords(): GetProps {
-  const { data, error, isPending, executeFetch } = useFetch(`${API_URL}games/words`)
+  const { data = null, error, isPending, executeFetch } = useFetch(`${API_URL}games/words`)
 
   const getWords = async () =>
     await executeFetch({
@@ -22,9 +22,12 @@ export function useGetWords(): GetProps {
 }
 
 export function useGetWordsByCategorySlug(slug: string): GetProps {
-  const { data, error, isPending, executeFetch } = useFetch(
-    `${API_URL}games/words/category/${slug}`
-  )
+  const {
+    data = null,
+    error,
+    isPending,
+    executeFetch
+  } = useFetch(`${API_URL}games/words/category/${slug}`)
 
   const getWords = async () =>
     await executeFetch({

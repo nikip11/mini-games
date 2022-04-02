@@ -5,7 +5,6 @@ import { initialValues } from './types'
 import TextField from '@/components/form/TextField'
 import * as Yup from 'yup'
 import AutoCompleteField from '@/components/form/AutoCompleteField'
-import useFetch from '@/hooks/useFetch'
 import { useSaveWord } from '@/services/WordService'
 import { useGetCategories } from '@/services/CategoryService'
 import { useEffect } from 'react'
@@ -24,7 +23,7 @@ const validationSchema = Yup.object().shape({
 export default function DialogWord(props: Props) {
   const { open, close, value } = props
   const { error, isPending, saveWord } = useSaveWord()
-  const { data: categoriesData, getCategories } = useGetCategories()
+  const { data: categoriesData = null, getCategories } = useGetCategories()
 
   useEffect(() => {
     getCategories()
