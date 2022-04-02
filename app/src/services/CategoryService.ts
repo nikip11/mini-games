@@ -1,6 +1,8 @@
 import useFetch from '@/hooks/useFetch'
 import { Category, UseProps } from '@/interfaces'
 
+const API_URL = import.meta.env.VITE_APP_API_URL
+
 interface GetProps extends UseProps {
   data: Category[] | null
   getCategories: () => Promise<void>
@@ -12,7 +14,7 @@ export function useGetCategories(): GetProps {
     error,
     isPending,
     executeFetch
-  } = useFetch('http://familiapp.np11.com/games/words/categories')
+  } = useFetch(`${API_URL}games/words/categories`)
 
   const getCategories = async () =>
     await executeFetch({
@@ -35,7 +37,7 @@ export function useSaveCategory(): SaveProps {
     error,
     isPending,
     executeFetch
-  } = useFetch('http://familiapp.np11.com/games/words/categories/save')
+  } = useFetch(`${API_URL}games/words/categories/save`)
 
   const saveCategory = async (category: Category) =>
     await executeFetch({
