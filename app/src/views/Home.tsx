@@ -9,6 +9,7 @@ export default function Home() {
         Mini Juegos
       </Typography>
       <Link to="/words">Words</Link>
+      <Link to="/words/admin">Words admin</Link>
     </SimpleContainer>
   )
 }
