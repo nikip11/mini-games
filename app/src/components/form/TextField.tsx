@@ -1,5 +1,5 @@
 import { Box, FormControl, TextField as MUITextField } from '@mui/material'
-import { Field, useField } from 'formik'
+import { useField } from 'formik'
 
 type Props = {
   id: string
@@ -14,7 +14,6 @@ export default function TextField(props: Props) {
   const [field, meta] = useField(id)
   return (
     <FormControl sx={{ width: '100%' }}>
-      {/* <Field id={id} placeholder={placeholder}> */}
       <MUITextField
         id={id}
         label={label}
@@ -27,7 +26,6 @@ export default function TextField(props: Props) {
         placeholder={placeholder}
       />
       <Box component="span">{meta.error}</Box>
-      {/* </Field> */}
     </FormControl>
   )
 }

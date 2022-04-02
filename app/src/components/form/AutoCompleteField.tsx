@@ -1,5 +1,5 @@
-import { FormControl, Autocomplete, TextField, Typography, Box } from '@mui/material'
-import { Field, FieldProps, useFormikContext, useField } from 'formik'
+import { FormControl, Autocomplete, TextField, Box } from '@mui/material'
+import { useFormikContext, useField } from 'formik'
 import { SyntheticEvent } from 'react'
 
 type Props<T> = {
