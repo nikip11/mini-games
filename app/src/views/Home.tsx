@@ -8,8 +8,6 @@ export default function Home() {
       <Typography variant="h2" sx={{ textAlign: 'center' }}>
         Mini Juegos
       </Typography>
-      <Link to="/words">Words</Link>
-      <Link to="/words/admin">Words admin</Link>
     </SimpleContainer>
   )
 }
