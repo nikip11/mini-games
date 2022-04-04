@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <SimpleContainer>
       <Typography variant="h2" sx={{ textAlign: 'center' }}>
-        -- Mini Juegos --
+        Mini Juegos
       </Typography>
+      <Link to="/admin/words">admin</Link>
+      <Link to="/words">juego</Link>
     </SimpleContainer>
   )
 }
