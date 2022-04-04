@@ -1,7 +1,7 @@
 import { Word, Category } from '@/interfaces'
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Grid } from '@mui/material'
 import { Formik, Form, FormikProps } from 'formik'
-import { initialValues } from './types'
+import { initialValues } from '../types'
 import TextField from '@/components/form/TextField'
 import * as Yup from 'yup'
 import AutoCompleteField from '@/components/form/AutoCompleteField'

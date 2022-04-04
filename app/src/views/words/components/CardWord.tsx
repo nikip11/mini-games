@@ -25,6 +25,9 @@ const cardStyle = (categoryId?: number) => ({
         fontSize: '2rem',
         mb: 1
       },
+      img: {
+        maxWidth: '100%'
+      },
       category: {
         textAlign: 'center',
         textTransform: 'uppercase',

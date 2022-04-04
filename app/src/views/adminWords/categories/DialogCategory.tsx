@@ -1,7 +1,7 @@
 import { Category } from '@/interfaces'
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Grid } from '@mui/material'
 import { Formik, Form, FormikProps } from 'formik'
-import { initialCategoryValues } from './types'
+import { initialCategoryValues } from '../types'
 import TextField from '@/components/form/TextField'
 import * as Yup from 'yup'
 import { useSaveCategory } from '@/services/CategoryService'
