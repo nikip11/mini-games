@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <SimpleContainer>
       <Typography variant="h2" sx={{ textAlign: 'center' }}>
-        Mini Juegos
+        -- Mini Juegos --
       </Typography>
     </SimpleContainer>
   )
