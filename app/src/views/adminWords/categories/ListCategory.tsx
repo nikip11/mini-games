@@ -3,8 +3,8 @@ import { useGetCategories } from '@/services/CategoryService'
 import { Skeleton, Grid, Container, Typography, IconButton } from '@mui/material'
 import { useEffect, useState } from 'react'
 import DialogCategory from './DialogCategory'
-import AdminCategoryCard from './AdminCategoryCard'
 import HeaderAdmin from '@/views/adminWords/components/HeaderAdmin'
+import CardAdmin from '../components/CardAdmin'
 
 export default function ListCategory() {
   const { data, error, isPending, getCategories } = useGetCategories()
@@ -70,7 +70,14 @@ export default function ListCategory() {
       <Grid container spacing={2}>
         {data?.map((item: Category) => (
           <Grid item xs={12} sm={6} md={4} key={item.title}>
-            <AdminCategoryCard item={item} onEdit={editRow} onDelete={deleteRow} />
+            <CardAdmin
+              item={{
+                title: item.title,
+                image: item.image
+              }}
+              onEdit={editRow}
+              onDelete={deleteRow}
+            />
           </Grid>
         ))}
       </Grid>

@@ -3,8 +3,8 @@ import { useGetWords } from '@/services/WordService'
 import { Button, Skeleton, Grid } from '@mui/material'
 import { useEffect, useState } from 'react'
 import DialogWord from './DialogWord'
-import AdminWordCard from './AdminWordCard'
 import HeaderAdmin from '@/views/adminWords/components/HeaderAdmin'
+import CardAdmin from '../components/CardAdmin'
 
 export default function ListWord() {
   const { data = [], error, isPending, getWords } = useGetWords()
@@ -18,13 +18,24 @@ export default function ListWord() {
   if (!data || isPending) {
     return (
       <>
-        <HeaderAdmin title="Palabras" openFormDialog={openFormDialog} />
-        <Skeleton height={30} />
-        <Skeleton height={20} />
-        <Skeleton height={20} />
-        <Skeleton height={20} />
-        <Skeleton height={20} />
-        <Skeleton height={20} />
+        <HeaderAdmin title="Categorías" openFormDialog={openFormDialog} />
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Skeleton height={65} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Skeleton height={65} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Skeleton height={65} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Skeleton height={65} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Skeleton height={65} />
+          </Grid>
+        </Grid>
       </>
     )
   }
@@ -58,8 +69,12 @@ export default function ListWord() {
       <Grid container spacing={3}>
         {data.map((item: Word) => (
           <Grid item xs={4} key={item.name}>
-            <AdminWordCard
-              item={item}
+            <CardAdmin
+              item={{
+                title: item.name,
+                image: item.image,
+                category: item.category
+              }}
               onEdit={() => editRow(item)}
               onDelete={() => deleteRow(item)}
             />

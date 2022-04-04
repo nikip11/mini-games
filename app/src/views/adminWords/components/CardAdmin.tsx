@@ -40,11 +40,13 @@ const style = {
     }
   }
 }
+
 type CardItem = {
   title: string
-  image: string
-  category?: Category
+  image?: string
+  category?: Category | null
 }
+
 type Props = {
   item: CardItem
   onEdit: (item: Category) => void

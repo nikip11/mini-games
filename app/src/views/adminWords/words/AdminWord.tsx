@@ -6,7 +6,6 @@ export default function AdminWord() {
   return (
     <>
       <Container>
-        <Link to="/words">Ir al juego</Link>
         <ListWord />
       </Container>
     </>
